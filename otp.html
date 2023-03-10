@@ -1,0 +1,38 @@
+<!-- User should be able to enter OTP and when clicking on submit make a new promise
+promise shud resolve if entered OTP is "1234" else reject -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP system</title>
+</head>
+<body>
+    <input type="number" placeholder="OTP" id="otp" >
+    <!-- <button type="submit">submit</button> -->
+</body>
+<script>
+  let input = document.getElementById("otp")
+  let acctualotp = 1234;
+   let promise = new Promise((resolve,reject)=>{
+          setTimeout(() =>{
+           if(acctualotp == input.value){
+            resolve("OTP Matches")
+           }
+           else{
+            reject("Check your email correctly")
+           }
+          },8000)
+    })
+     promise.then((res)=>{
+        alert(res)
+     })
+     .catch((error)=>{
+        alert(error)
+     })
+</script>
+</html>
